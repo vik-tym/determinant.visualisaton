@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def draw_linear_map(ax, A, title):
-    # ґратка
+    
     x = np.linspace(-3, 3, 20)
     y = np.linspace(-3, 3, 20)
 
@@ -16,7 +16,7 @@ def draw_linear_map(ax, A, title):
         pts_t = pts @ A.T
         ax.plot(pts_t[:, 0], pts_t[:, 1], color='lightgray')
 
-    # базис
+    
     e1 = np.array([1, 0])
     e2 = np.array([0, 1])
 
@@ -35,7 +35,7 @@ def draw_linear_map(ax, A, title):
     ax.set_ylim(-5, 5)
     ax.set_title(title)
 
-# Матриці
+
 A_pos = np.array([[2, 1],
                   [1, 1]])     # det > 0
 
@@ -45,7 +45,7 @@ A_neg = np.array([[1, 2],
 A_zero = np.array([[1, 1],
                    [2, 2]])    # det = 0
 
-# Побудова
+
 fig, axes = plt.subplots(1, 3, figsize=(15, 5))
 
 draw_linear_map(axes[0], A_pos, "det(A) > 0\nорієнтація збережена")
